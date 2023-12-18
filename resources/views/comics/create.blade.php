@@ -4,8 +4,10 @@
 
     <section class="my-5 py3">
         <div class="container">
-            <form>
+            <form action="{{ route('comics.store') }}" method="POST">
+
                 @csrf
+                
                 <div class="mb-3">
                   <label for="title" class="form-label">Titolo</label>
                   <input type="text" class="form-control" id="title">
@@ -42,7 +44,7 @@
                     <input type="password" class="form-control" id="exampleInputPassword1">
                 </div> --}}
                 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Invia</button>
             </form>
             <div class="my-4">
                 <a href="{{ route('comics.index') }}">Back to index</a>
