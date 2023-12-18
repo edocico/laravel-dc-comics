@@ -18,7 +18,7 @@
                     <th>Data vendita</th>
                     <th>Tipo</th>
                     <th>
-                        <a href="" class="btn btn-sm btn-primary">Nuovo fumetto</a>
+                        <a href="{{ route('comics.create') }}" class="btn btn-sm btn-primary">Nuovo fumetto</a>
                     </th>
                 </tr>
             </thead>
