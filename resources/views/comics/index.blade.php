@@ -12,7 +12,7 @@
                     <th>ID</th>
                     <th>Titolo</th>
                     <th>Descrizione</th>
-                    <th>Pic</th>
+                    <th>Immagine</th>
                     <th>Prezzo</th>
                     <th>Serie</th>
                     <th>Data vendita</th>
@@ -26,9 +26,13 @@
                 @forelse ($comics as $comic)
                     <tr>
                         <td>{{ $comic->id }}</td>
-                        <td>{{ $comic->title }}</td>
+                        <td>
+                            <a href="{{ route('comics.show', $comic) }}">{{ $comic->title }}</a>
+                        </td>
                         <td>{{ $comic->description }}</td>
-                        <!--<td>{{ $comic->thumb }}</td>-->
+                        <td>
+                            <img src="{{ $comic->thumb }}" width="100" alt="">
+                        </td>
                         <td>{{ $comic->price }}</td>
                         <td>{{ $comic->series }}</td>
                         <td>{{ $comic->sale_date }}</td>
