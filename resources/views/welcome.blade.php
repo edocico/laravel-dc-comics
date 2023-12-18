@@ -20,6 +20,9 @@
     <main class="bg-light">
         <div class="container">
             <div class="row">
+                <div>
+                    <a href="{{ route('comics.index') }}">Go to Comics</a>
+                </div>
                 <div class="col-12">
                     <div class="min-vh-100 py-5 d-flex flex-column justify-content-center">
                         <div class="logo_laravel">
