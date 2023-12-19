@@ -1,9 +1,15 @@
 @extends('layouts.app')
 
+<header class="py-3">
+    <div class="container">
+        <h1 class="text-center">Comics List</h1>
+    </div>
+</header>
+
 @section('content')
 
-<section>
-    <div class="container">
+<section class="py-5">
+    <div class="container border border-black">
 
         <table class="table my-3">
 
@@ -31,7 +37,7 @@
                         </td>
                         <td>{{ $comic->description }}</td>
                         <td>
-                            <img src="{{ $comic->thumb }}" width="100" alt="">
+                            <img src="{{ $comic->thumb }}" width="100" alt="comic's front page">
                         </td>
                         <td>{{ $comic->price }}</td>
                         <td>{{ $comic->series }}</td>

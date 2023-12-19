@@ -3,7 +3,7 @@
 @section('content')
 
     <section class="my-5 py3">
-        <div class="container">
+        <div class="container border border-primary-subtle py-3 px-3">
             <form action="{{ route('comics.store') }}" method="POST">
 
                 @csrf
