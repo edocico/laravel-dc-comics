@@ -37,6 +37,13 @@
                         <td>{{ $comic->series }}</td>
                         <td>{{ $comic->sale_date }}</td>
                         <td>{{ $comic->type }}</td>
+                        <td><a href="{{ route('comics.edit', $comic) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="Cancella" class="my-4">
+                            </form>
+                        </td>
                     </tr>
                     
                 @empty

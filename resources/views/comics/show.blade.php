@@ -22,8 +22,9 @@
                 </p>
             </div>
         </div>
-        <div class="my-5">
+        <div class="my-5 d-flex justify-content-between">
             <a href="{{ route('comics.index') }}">Back to comics list</a>
+            <a href="{{ route('comics.edit', $comic) }}" class="btn btn-primary btn-sm">Edit</a>
         </div>
 
     </div>
