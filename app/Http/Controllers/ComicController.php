@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreComicRequest;
 use App\Http\Requests\UpdateComicRequest;
 use App\Models\Comic;
+use Illuminate\Support\Facades\Request;
 
 class ComicController extends Controller
 {
@@ -29,11 +30,13 @@ class ComicController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreComicRequest $request)
+    public function store(UpdateComicRequest $request)
     {
         $data = $request->all();
 
-        dd($data);
+        $new_comic = Comic::create($data);
+
+        return redirect()->route('comics.show', $new_comic);
     }
 
     /**
@@ -49,15 +52,19 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateComicRequest $request, Comic $comic)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $data = $request->all();
+
+        $comic->update($data);
+
+        return redirect()->route('comics.show', $comic);
     }
 
     /**
